@@ -1,0 +1,35 @@
+<%= form_for @survey do |f| %>
+  <% if @survey.errors.any? %>
+    <div id="errorExplanation">
+      <h2><%= pluralize(@survey.errors.count, "error") %> prohibited this survey from being saved:</h2>
+     <ul>
+       <% @survey.errors.full_messages.each do |msg| %>
+         <li><%= msg %></li>
+       <% end %>
+     </ul>
+   </div>
+  <% end %>
+  <p>
+    <%= f.label :title %><br>
+    <%= f.text_field :title %> Name of the course
+  </p>
+
+  <p>
+    <%= f.label :term %><br>
+    <%= f.text_field :term %> i.e. sose13
+    </p>
+
+  <p>
+    <%= f.label :comment %><br>
+    <%= f.text_area :comment, :size => "40x10" %>
+
+  <p>
+    <%= f.label :active %><br>
+    <%= f.check_box :active %> if checked, the Survey is availible to the public
+  </p>
+
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
+

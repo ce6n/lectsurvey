@@ -1,0 +1,26 @@
+<p>
+  <strong>Title:</strong>
+  <%= @survey.title %>
+</p>
+
+
+<p>
+  <strong>Term:</strong>
+  <%= @survey.term %>
+</p>
+
+<p>
+  <strong>Comment:</strong>
+  <%= @survey.comment %>
+  </p>
+
+<p>
+  <% if @survey.active == 1 %>
+    <strong>Survey is active.</strong>
+  <% else %>
+    <strong>Survey is inactive.</strong>
+  <% end %>
+</p>
+
+<%= link_to 'Back', surveys_path %>
+| <%= link_to 'Edit', edit_survey_path(@survey) %>

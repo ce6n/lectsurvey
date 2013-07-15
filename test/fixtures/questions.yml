@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  questiontext: MyText
+  questionclass: 1
+  survey_id: 
+
+two:
+  questiontext: MyText
+  questionclass: 1
+  survey_id: 

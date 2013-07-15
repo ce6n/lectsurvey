@@ -22,5 +22,34 @@
   <% end %>
 </p>
 
+<hr />
+
+<h2>Questions</h2>
+<% @survey.questions.each do |question| %>
+    <p>
+      <strong>Questiontext:</strong>
+      <%= question.questiontext %>
+    </p>
+    <p>
+      <strong>Questionclass:</strong>
+      <%= question.questionclass %>
+    </p>
+<% end %>
+
+<h2>Add a Question:</h2>
+<%= form_for([@survey, @survey.questions.build]) do |f| %>
+  <p>
+    <%= f.label :questiontext %><br>
+    <%= f.text_area :questiontext, :size => "40x10" %>
+  </p>
+  <p>
+    <%= f.label :questionclass %><br>
+    <%= f.number_field :questionclass, :min => "1", :max => "3" %>
+  </p>
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
+
 <%= link_to 'Back', surveys_path %>
 | <%= link_to 'Edit', edit_survey_path(@survey) %>
